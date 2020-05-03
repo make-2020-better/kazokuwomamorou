@@ -2,12 +2,16 @@
   "name": "kazokuwomamorou",
   "version": "0.0.0",
   "scripts": {
+    "onboard": "npm install -g yarn @angular/cli angular-cli-ghpages",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build:gh-pages": "yarn build:prod && yarn cli:gh-pages",
+    "build:prod": "ng build --prod --base-href \"https://kazoku-wo-mamorou.com/\"",
+    "cli:gh-pages": "angular-cli-ghpages --dir=\"dist/kazokuwomamorou\" --cname=kazoku-wo-mamorou.com"
   },
   "private": true,
   "dependencies": {
